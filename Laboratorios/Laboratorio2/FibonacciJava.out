@@ -1,0 +1,13 @@
+SHORT: Overflow to SHORT in fib(23)
+Last value: fib(22) = 28657
+
+INTEGER: Overflow to INTEGER in fib(46)
+Last value: fib(45) = 1836311903
+
+LONG: Overflow to LONG in fib(92)
+Last value: fib(91) = 7540113804746346429
+
+FLOAT: Float variable doesn't overflow, but with big numbers the precision is lost. For larger values than fib(186), the result is Infinity
+
+DOUBLE: Double variable doesn't overflow, but with big numbers the precision is lost. For larger values than fib(1476), the result is Infinity
+
