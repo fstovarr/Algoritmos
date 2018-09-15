@@ -45,7 +45,8 @@ void iinteger() {
 
 void llong() {
 printf("LONG: ");
-    long i, p = 0, a = 0;
+    int i;
+    long p = 0, a = 0;
     for (i = 0; i <= 100; i++){
         long prev = 0, act = 1, res = 0;
         int j;
@@ -57,7 +58,7 @@ printf("LONG: ");
 
         a = res;
         if(a < p) {
-            printf("Overflow to LONG in fib(%d)\nLast value: fib(%d) = %d\n\n", i, i-1, p);
+            printf("Overflow to LONG in fib(%d)\nLast value: fib(%d) = %ld\n\n", i, i-1, p);
             break;
         }
         p = a;
@@ -79,7 +80,7 @@ void longlong() {
         a = res;
 
         if(a < p) {
-            printf("Overflow to LONG LONG in fib(%d)\nLast value: fib(%d) = %d\n\n", i, i-1, p);
+            printf("Overflow to LONG LONG in fib(%d)\nLast value: fib(%d) = %lld\n\n", i, i-1, p);
             break;
         }
         p = a;
@@ -102,7 +103,7 @@ void ffloat() {
         a = res;
 
         if(a < p) {
-            printf("Overflow to FLOAT in fib(%f)\nLast value: fib(%f) = %f\n\n", i, i-1, p);
+            printf("Overflow to FLOAT in fib(%d)\nLast value: fib(%d) = %f\n\n", i, i-1, p);
             break;
         }
         p = a;
@@ -139,7 +140,7 @@ void ldouble() {
 printf("LONG DOUBLE: ");
     int i;
     long double p = 0, a = 0;
-    for (i = 0; i <= 100; i++){
+    for (i = 0; i <= 93; i++){
         long double prev = 0, act = 1, res = 0;
         int j;
         for (j = 0; j < i; j++) {
@@ -149,12 +150,13 @@ printf("LONG DOUBLE: ");
         }
         a = res;
         if(a < p) {
-            printf("Overflow to LONG DOUBLE in fib(%d)\nLast value: fib(%d) = %f\n\n", i, i-1, p);
+            printf("Overflow to LONG DOUBLE in fib(%d)\nLast value: fib(%d) = %Lf\n\n", i, i-1, p);
             break;
         }
-        printf("fib(%d) = %Lf\n",i,a);
+        //printf("fib(%d) = %Lf\n",i,a);
         p = a;
     }
+	printf("Long double variable doesn't overflow, but with big numbers the precision is lost. For larger values than fib(%d), the result is wrong (%Lf)\n\n", (i - 1), a);
 }
 
 int main() {
