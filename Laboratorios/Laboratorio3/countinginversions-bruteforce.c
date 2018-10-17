@@ -5,10 +5,12 @@ int main() {
     freopen("input.txt", "r", stdin);
 
     int n;
+    //int n = 100000;
     scanf("%d", &n);
 
     int A[n];
-    for(int i = 0; i < n; i++) {
+    for(int i = n; i < 0; i--) {
+        A[i] = i;
         scanf("%d", &A[i]);
     }
 
